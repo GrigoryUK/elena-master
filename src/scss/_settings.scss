@@ -1,16 +1,17 @@
 html {
   box-sizing: border-box;
+  font-size: 10px;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: var(--font-family);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -19,16 +20,36 @@ html {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
+  line-height: 160%;
+  font-weight: 300;
+  color: var(--black);
 }
 
-img {
-  height: auto;
-  max-width: 100%;
+img,
+video {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  display: flex;
 }
 
 a {
   text-decoration: none;
+  text-underline-offset: 0.3rem;
+}
+
+a,
+img,
+svg,
+button,
+input {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+input {
+  outline: none;
+  border-radius: 0;
 }
 
 .site-container {
@@ -82,6 +103,14 @@ a {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+
+  @include tablet {
+    padding: 0 2rem;
+  }
+
+  @include mobile {
+    padding: 0 1.5rem;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -104,4 +133,35 @@ a {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+
+p {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+
+  @include mobile {
+    font-size: 1.4rem;
+  }
+}
+
+p + p {
+  margin-top: 2rem;
+
+  @include mobile {
+    margin-top: 1.4rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 500;
 }
