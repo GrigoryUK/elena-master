@@ -25,7 +25,13 @@
 }
 
 @mixin mobile {
-  @media (max-width: (576px)) {
+  @media (max-width: (667px)) {
+    @content;
+  }
+}
+
+@mixin mobile-rotate {
+  @media (max-width: 667px) and (max-height: 400px) {
     @content;
   }
 }
