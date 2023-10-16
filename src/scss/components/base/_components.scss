@@ -7,6 +7,10 @@
   }
 }
 
+.titleC {
+  text-align: center;
+}
+
 .linkC-underline {
   color: var(--black);
   font-size: 1.6rem;
@@ -71,6 +75,8 @@
 }
 
 .linkC-underline-hover {
+  position: relative;
+
   &::after {
     content: "";
     position: absolute;
@@ -96,6 +102,62 @@
   }
 }
 
+.formContactC {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+
+  .linkC-underline-hover {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 160%;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+
+  .linkC-underline {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+
+  .icon-wp {
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+
+    @include mobile {
+      min-width: 1.8rem;
+      max-width: 1.8rem;
+    }
+  }
+
+  .icon-insta {
+    min-width: 2.3rem;
+    max-width: 2.3rem;
+
+    @include mobile {
+      min-width: 1.7rem;
+      max-width: 1.7rem;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+}
+
 .mt-146-primary {
   margin-top: 14.6rem;
 
@@ -108,10 +170,30 @@
   }
 }
 
+.pt-146-primary {
+  padding-top: 14.6rem;
+
+  @include tablet {
+    padding-top: 10rem;
+  }
+
+  @include mobile {
+    padding-top: 7rem;
+  }
+}
+
 .mb-180-primary {
   margin-bottom: 18rem;
 
   @include tablet {
+    margin-bottom: 10rem;
+  }
+}
+
+.mb-150-primary {
+  margin-bottom: 15rem;
+
+  @include mobile {
     margin-bottom: 10rem;
   }
 }

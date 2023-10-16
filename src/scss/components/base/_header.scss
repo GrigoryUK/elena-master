@@ -11,6 +11,14 @@
         justify-content: space-between;
         padding-top: 2.6rem;
 
+        @include tablet {
+          padding-top: 2rem;
+        }
+
+        @include mobile {
+          padding-top: 1.5rem;
+        }
+
         span,
         a {
           color: var(--black);
@@ -176,4 +184,12 @@
 
 .header--padding {
   padding-top: 5.8rem;
+
+  @include tablet {
+    padding-top: 4.2rem;
+  }
+
+  @include mobile {
+    padding-top: 3.7rem;
+  }
 }
