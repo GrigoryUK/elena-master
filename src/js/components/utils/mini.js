@@ -18,3 +18,21 @@ export const smoothScroll = () => {
   });
 }
 
+
+export const getMinHeight = () => {
+  const getHeight = () => {
+    const headerHeight = document?.querySelector('.header').offsetHeight;
+    const headerFooter = document?.querySelector('.footer').offsetHeight;
+
+    document.querySelector(':root').style.setProperty('--min-height', `calc(100vh - ${headerHeight}px - ${headerFooter}px)`);
+
+
+  }
+
+  getHeight();
+
+  window.addEventListener('resize', el => {
+    getHeight();
+  })
+}
+

@@ -1,16 +1,4 @@
 .pageContact {
-  .content {
-    min-height: calc(100vh - var(--h-navbar-desk) - var(--h-footer-secondary-desk));
-
-    @include tablet {
-      min-height: calc(100vh - var(--h-navbar-tablet) - var(--h-footer-secondary-tablet));
-    }
-
-    @include mobile {
-      min-height: calc(100vh - var(--h-navbar-mobile) - var(--h-footer-secondary-mobile));
-    }
-  }
-
   &__form {
     display: flex;
     justify-content: flex-end;

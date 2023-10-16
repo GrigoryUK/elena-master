@@ -190,7 +190,23 @@
   }
 }
 
+.pb-180-primary {
+  margin-bottom: 18rem;
+
+  @include tablet {
+    margin-bottom: 10rem;
+  }
+}
+
 .mb-150-primary {
+  margin-bottom: 15rem;
+
+  @include mobile {
+    margin-bottom: 10rem;
+  }
+}
+
+.pb-150-primary {
   margin-bottom: 15rem;
 
   @include mobile {
