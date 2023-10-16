@@ -1,0 +1,243 @@
+.pageProjects {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+    row-gap: 5rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+      row-gap: 5rem;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+    }
+
+    .mix {
+      align-self: flex-start;
+    }
+
+    .itemC {
+      display: block;
+
+      img {
+        margin-bottom: 2rem;
+
+        @include mobile {
+          margin-bottom: 1rem;
+        }
+      }
+
+      span {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: all 0.2s ease;
+
+        @include mobile {
+          font-size: 1.4rem;
+        }
+      }
+
+      @include hover {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__also {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+      margin-top: 7rem;
+    }
+
+    button {
+      font-size: 1.8rem;
+      line-height: 160%;
+      text-transform: uppercase;
+
+      @include mobile {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    max-width: 87rem;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+
+    @include tablet {
+      margin-bottom: 8rem;
+    }
+
+    @include mobile {
+      margin-bottom: 5rem;
+    }
+
+    h1 {
+      margin-bottom: 4rem;
+
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @include small-tablet {
+      max-width: 60rem;
+    }
+  }
+
+  .filter {
+    &.filter__primary {
+      .selected-tab {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--black);
+
+        &-span {
+          font-size: 1.4rem;
+          text-transform: uppercase;
+        }
+      }
+
+      .selected-tab-arrow {
+        transition: all 0.4s ease-in-out;
+        transform-origin: center center;
+        &.active {
+          transform: rotate(-180deg);
+        }
+      }
+
+      .filter {
+        &__nav {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          list-style: none;
+          gap: 5rem;
+
+          @include tablet {
+            gap: 3rem;
+          }
+
+          @include mobile {
+            gap: 0;
+            display: block;
+            margin-top: 2rem;
+          }
+
+          &-item {
+            @include mobile {
+              @include mb(1rem);
+            }
+          }
+
+          &-btn {
+            background: none;
+            border: none;
+            color: var(--black);
+            font-family: var(--font-family);
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+
+            @include mobile {
+              font-size: 1.4rem;
+              opacity: 0.5;
+            }
+
+            &:not(.mixitup-control-active) {
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 0.05em;
+                background: currentColor;
+                will-change: transform;
+                transform-origin: 100% 100%;
+                transform: scaleX(0);
+                pointer-events: none;
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transition-duration: 0.5s;
+
+                @include mobile {
+                  display: none;
+                }
+              }
+
+              @include hover {
+                &::after {
+                  transform-origin: 0 0;
+                  transform: scaleX(1);
+                }
+              }
+            }
+
+            &.mixitup-control-active {
+              @include mobile {
+                opacity: 1;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 0.1rem;
+                bottom: 0;
+                background: currentColor;
+                will-change: transform;
+                transform-origin: 100% 100%;
+                transform: scaleX(0);
+                pointer-events: none;
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transition-duration: 0.5s;
+                transform-origin: 0 0;
+                transform: scaleX(1);
+                animation: none;
+
+                @include mobile {
+                  display: none;
+                }
+              }
+
+              @include hover {
+                &::after {
+                  animation: link 0.75s forwards;
+                }
+              }
+            }
+          }
+        }
+
+        &__content {
+          padding-top: 4rem;
+
+          @include mobile {
+            padding-top: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

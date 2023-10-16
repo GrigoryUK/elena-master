@@ -70,6 +70,8 @@ input {
 input {
   outline: none;
   border-radius: 0;
+  border: none;
+  border-bottom: 0.1rem solid var(--black);
 }
 
 .site-container {

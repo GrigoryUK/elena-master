@@ -71,6 +71,7 @@
           font-weight: 500;
           line-height: 160%;
           text-transform: uppercase;
+          display: flex;
 
           @include mobile {
             font-size: 1.6rem;
@@ -114,10 +115,10 @@
         text-align: right;
         font-family: var(--font-family);
         font-size: 1.6rem;
-        font-style: normal;
         font-weight: 500;
-        line-height: normal;
+        line-height: 1.6;
         text-transform: uppercase;
+        display: flex;
 
         @include mobile {
           font-size: 1.4rem;

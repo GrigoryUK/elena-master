@@ -96,6 +96,17 @@
     }
   }
 
+  .titleUnderLineC {
+    h6 {
+      margin-bottom: 0.2rem;
+
+      @include mobile {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
   &__content {
     display: flex;
     justify-content: flex-end;
