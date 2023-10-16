@@ -1,0 +1,18 @@
+.pagePolicy {
+  .titleUnderLineC {
+    margin-bottom: 10rem;
+
+    @include tablet {
+      margin-bottom: 5rem;
+    }
+
+    @include mobile {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .text__container {
+    max-width: 132rem;
+    margin: 0 auto;
+  }
+}

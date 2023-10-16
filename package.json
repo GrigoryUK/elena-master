@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
+    "accordion-js": "^3.3.4",
     "aos": "^2.3.4",
     "disable-scroll": "^0.6.0",
     "graph-modal": "^1.0.4",
@@ -64,6 +65,7 @@
     "jquery": "^3.6.1",
     "just-validate": "^3.3.3",
     "lozad": "^1.16.0",
+    "mixitup": "^3.3.1",
     "rellax": "^1.12.1",
     "scroll-lock": "^2.1.5",
     "simplebar": "^5.3.6",

@@ -19,7 +19,7 @@ html {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 160%;
   font-weight: 300;
   color: var(--black);
@@ -36,6 +36,7 @@ video {
 a {
   text-decoration: none;
   text-underline-offset: 0.3rem;
+  color: var(--black);
 }
 
 a,
@@ -164,4 +165,24 @@ h5,
 h6 {
   margin: 0;
   font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 160%;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 1.8rem;
+  }
+}
+
+li {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+  font-family: var(--font-family);
+
+  @include mobile {
+    font-size: 1.4rem;
+  }
 }

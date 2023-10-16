@@ -1,0 +1,179 @@
+.header {
+  &.secondary {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    .header {
+      &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 2.6rem;
+
+        span,
+        a {
+          color: var(--black);
+          font-family: var(--font-family);
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+
+        a {
+          position: relative;
+          color: var(--black);
+          display: flex;
+        }
+
+        .burger {
+          display: none;
+
+          @include tablet {
+            display: block;
+            position: relative;
+            width: 4rem;
+            height: 2.2rem;
+          }
+
+          &__line {
+            width: 100%;
+            background: var(--black);
+            height: 0.2rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            &:first-child {
+              margin-top: -0.3rem;
+            }
+
+            &:last-child {
+              margin-top: 0.3rem;
+            }
+          }
+        }
+      }
+
+      &__logo {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        span {
+          &:first-child {
+            font-size: 1.8rem;
+
+            @include mobile {
+              font-size: 1.5rem;
+            }
+          }
+
+          &:last-child {
+            font-size: 1.4rem;
+            font-weight: 300;
+
+            @include mobile {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &__right {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &__nav {
+        ul {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          padding: 0;
+          list-style: none;
+
+          li {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+          }
+
+          li + li {
+            &::before {
+              display: inline-block;
+              color: currentColor;
+              content: "/";
+              font-weight: 500;
+              padding: 0 0.7rem;
+            }
+          }
+
+          a {
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 0.05em;
+              background: currentColor;
+              will-change: transform;
+              transform-origin: 100% 100%;
+              transform: scaleX(0);
+              pointer-events: none;
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+              transition-duration: 0.5s;
+            }
+
+            @include hover {
+              &::after {
+                transform-origin: 0 0;
+                transform: scaleX(1);
+              }
+            }
+          }
+        }
+      }
+
+      &__languages {
+        display: flex;
+        align-items: center;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          align-items: center;
+
+          li {
+            display: flex;
+            align-items: center;
+          }
+          li + li {
+            &::before {
+              display: inline-block;
+              color: currentColor;
+              content: "/";
+              font-weight: 500;
+              padding: 0 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header--padding {
+  padding-top: 5.8rem;
+}

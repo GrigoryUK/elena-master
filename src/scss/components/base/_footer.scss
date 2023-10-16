@@ -1,0 +1,122 @@
+.footer {
+  &.secondary {
+    padding-bottom: 4rem;
+
+    @include tablet {
+      padding-bottom: 3rem;
+    }
+    .container {
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 16rem;
+      }
+
+      @include mobile {
+        margin-right: 0;
+        justify-content: flex-start;
+      }
+    }
+    .footer {
+      &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+          font-size: 1.6rem;
+          @include tablet {
+            font-size: 1.4rem;
+          }
+        }
+
+        @include tablet {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+
+        a {
+          color: var(--black);
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 160%;
+          position: relative;
+
+          @include tablet {
+            font-size: 1.4rem;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 0.1rem;
+            bottom: 0;
+            background: currentColor;
+            will-change: transform;
+            transform-origin: 100% 100%;
+            transform: scaleX(0);
+            pointer-events: none;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-duration: 0.5s;
+            transform-origin: 0 0;
+            transform: scaleX(1);
+            animation: none;
+          }
+
+          @include hover {
+            &::after {
+              animation: link 0.75s forwards;
+            }
+          }
+        }
+      }
+
+      &__left {
+        display: flex;
+        gap: 10rem;
+        align-items: center;
+
+        @include tablet {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+
+      &__right {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@keyframes link {
+  0%,
+  0.1% {
+    transform-origin: 100% 100%;
+    transform: scaleX(1);
+  }
+
+  49.9% {
+    transform-origin: 100% 100%;
+    transform: scaleX(0);
+  }
+
+  50%,
+  50.1% {
+    transform-origin: 0 0;
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform-origin: 0 0;
+    transform: scaleX(1);
+  }
+}
