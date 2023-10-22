@@ -67,6 +67,10 @@ input {
   transition: all 0.2s ease;
 }
 
+.display-none {
+  display: none;
+}
+
 input {
   outline: none;
   border-radius: 0;

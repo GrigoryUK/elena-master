@@ -1,7 +1,8 @@
-  import Swiper, { Navigation, Pagination } from 'swiper'
-  Swiper.use([Navigation, Pagination]);
+  import Swiper, { EffectFade, Navigation, Pagination } from 'swiper'
+  Swiper.use([Navigation, Pagination, EffectFade]);
 export default function slidersJs() {
   sliderProject()
+  sliderHome();
 }
 
 
@@ -30,4 +31,14 @@ const sliderProject = () => {
 
     }
 
+}
+
+const sliderHome = () => {
+  const swiper = new Swiper('.pageHome__slider', {
+    slidesPerView: '1',
+    loop: true,
+    effect: 'fade',
+    speed: 1500,
+
+  });
 }

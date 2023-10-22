@@ -1,7 +1,14 @@
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg">
   <symbol id="icon-test" width="79" height="53" viewBox="0 0 79 53">
   </symbol>
-
+  <symbol id="icon-arrow-projects" width="65" height="15" viewBox="0 0 65 15">
+    <rect y="6.07129" width="62" height="2" fill="black"/>
+    <rect x="57" width="10" height="2" transform="rotate(45 57 0)" fill="black"/>
+    <rect x="64.0713" y="7.07129" width="10" height="2" transform="rotate(135 64.0713 7.07129)" fill="black"/>
+  </symbol>
+  <symbol id="icon-close-cookie" width="10" height="10" viewBox="0 0 10 10">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.06067 0L0 1.06067L3.7124 4.77313L0.00012207 8.48541L1.06067 9.54608L4.77307 5.83374L8.48523 9.54596L9.5459 8.48529L5.83374 4.77307L9.54602 1.06079L8.48535 0.00012207L4.77307 3.7124L1.06067 0Z" fill="white"/>
+  </symbol>
   <symbol id="icon-arrow-slider" width="9" height="15" viewBox="0 0 9 15">
     <g id="Group 2317">
     <rect id="Rectangle 1301" x="1.92969" width="10" height="2" transform="rotate(45 1.92969 0)" fill="white"/>

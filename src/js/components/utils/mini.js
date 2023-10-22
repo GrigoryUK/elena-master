@@ -1,5 +1,6 @@
 
 import Inputmask from "inputmask"
+import $ from 'jquery'
 import SmoothScroll from 'smooth-scroll'
 
 export const maskPhone = () => {
@@ -15,9 +16,11 @@ export const smoothScroll = () => {
   const scroll = new SmoothScroll('a[href*="#top"]', {
     updateURL: false,
     speed: 700,
-    speedAsDuration: true,
+    // speedAsDuration: true,
   });
 }
+
+
 
 
 export const getMinHeight = () => {
@@ -34,6 +37,23 @@ export const getMinHeight = () => {
 
   window.addEventListener('resize', el => {
     getHeight();
+  })
+}
+
+export const scrollYJs = () => {
+  window.addEventListener('scroll', (e) => {
+    document.querySelector(':root').style.setProperty('--scrollTop', `${window.scrollY}px`)
+  })
+}
+
+export const cookieClose = () => {
+  const cookie = $('.data-cookie');
+  if (sessionStorage.getItem('cookie') !== 'cookie-id') {
+    cookie.fadeIn('slow');
+  }
+  $('.btn-close-cookieHome').on('click', function() {
+      $(this).closest('.cookieHome').fadeOut();
+      sessionStorage.setItem('cookie', 'cookie-id')
   })
 }
 

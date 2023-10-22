@@ -21,6 +21,7 @@ export default function filtersJs() {
         button.addEventListener('click', () => {
           const filterValue = button.getAttribute('data-filter');
           mixer.filter(filterValue);
+          console.log(scrollTrig.refresh());
         });
       });
     });

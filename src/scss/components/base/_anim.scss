@@ -1,0 +1,17 @@
+.anim-parallax-trigger {
+  transition: var(--transition-anim);
+  will-change: transform;
+}
+
+.anim-parallax-item {
+  transition: var(--transition-anim);
+  will-change: transform;
+}
+
+.parallaxBlock__img {
+  transition: var(--transition-anim);
+}
+
+.parallaxBlock__text {
+  transition: var(--transition-anim);
+}

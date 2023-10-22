@@ -2,7 +2,7 @@
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
 // Определение операционной системы на мобильных
-import { mobileCheck } from "./functions/mobile-check";
+import { mobileCheck } from "./functions/mobile-check"
 console.log(mobileCheck())
 
 // Определение ширины экрана
@@ -61,7 +61,7 @@ console.log(mobileCheck())
 // AOS.init();
 
 // Подключение параллакса блоков при скролле
-// import Rellax from 'rellax';
+// import Rellax from 'rellax'
 // const rellax = new Rellax('.rellax');
 
 // Подключение плавной прокрутки к якорям
