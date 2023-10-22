@@ -2,6 +2,12 @@
   <symbol id="icon-test" width="79" height="53" viewBox="0 0 79 53">
   </symbol>
 
+  <symbol id="icon-arrow-slider" width="9" height="15" viewBox="0 0 9 15">
+    <g id="Group 2317">
+    <rect id="Rectangle 1301" x="1.92969" width="10" height="2" transform="rotate(45 1.92969 0)" fill="white"/>
+    <rect id="Rectangle 1302" x="9" y="7.07129" width="10" height="2" transform="rotate(135 9 7.07129)" fill="white"/>
+    </g>
+  </symbol>
   <symbol id="icon-arrow-dropdown" width="10" height="6" viewBox="0 0 10 6">
     <rect x="10" y="1" width="7.07096" height="1.41419" transform="rotate(135 10 1)" fill="black"/>
     <rect x="5" y="6" width="7.07096" height="1.41419" transform="rotate(-135 5 6)" fill="black"/>

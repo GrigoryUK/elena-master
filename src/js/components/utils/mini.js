@@ -1,3 +1,4 @@
+
 import Inputmask from "inputmask"
 import SmoothScroll from 'smooth-scroll'
 
@@ -35,4 +36,14 @@ export const getMinHeight = () => {
     getHeight();
   })
 }
+
+export const isInViewport = function(element) {
+  const rect = element[0].getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
 
