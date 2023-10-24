@@ -1,0 +1,77 @@
+.preloader {
+  --transition-anim: all 0.5s ease;
+
+  height: 100vh;
+  width: 100vw;
+  background: var(--white);
+  position: fixed;
+  z-index: var(--z-preloader);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-anim);
+  transform-origin: center;
+
+  &.in-active {
+    background: var(--black);
+  }
+
+  &.in-out {
+    transform: scale(1.1);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__words {
+    width: 26rem;
+    height: 3rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      height: 2rem;
+    }
+
+    span {
+      display: block;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: var(--transition-anim);
+      transform: translate3d(0, 4rem, 0);
+      opacity: 0;
+      visibility: hidden;
+
+      @include tablet {
+        font-size: 1.8rem;
+      }
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+
+      &.in-active {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &.in-out {
+        transform: translate3d(0, -4rem, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &--one {
+      color: var(--black);
+    }
+
+    &--two {
+      position: absolute;
+      color: var(--white);
+    }
+  }
+}

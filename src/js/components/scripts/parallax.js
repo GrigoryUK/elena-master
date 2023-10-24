@@ -50,30 +50,53 @@ const parallaxMainGsap = () => {
 
 const parallaxMainScrollGsap = () => {
 
-  const container = document.querySelector('.parallaxBlock__img');
+  const container = document.querySelector('.hero-bg');
+
+
 
   if (container) {
-    gsap.to('.parallaxBlock__img', {
+
+
+    gsap.to('.hero-bg', {
       scrollTrigger: {
         trigger: '.parallaxBlock__main',
         start: 'top 70%',
-        end: 'bottom top',
+        end: 'bottom 100%',
         // markers:true,
-        scrub: true,
+        scrub: 2
       },
-      y: '10%',
-      scale: '1',
+      scale: '1.05',
+      y: '70%'
     });
-    gsap.to('.parallaxBlock__text', {
+
+
+
+    gsap.to('.hero', {
       scrollTrigger: {
-        trigger: '.parallaxBlock__main',
-        start: 'top 70%',
+        trigger: '.hero',
+        start: 'top top',
         end: 'bottom top',
         // markers:true,
-        scrub: true,
+        scrub: 2
       },
-      y: '10%',
+      height: '-5vh'
     });
+
+
+
+
+    // gsap.to('.parallaxBlock__img', {
+    //   scrollTrigger: {
+    //     trigger: '.parallaxBlock__main',
+    //     start: 'top 70%',
+    //     end: 'bottom top',
+    //     // markers:true,
+    //     scrub: true,
+    //   },
+    //   y: '50%',
+    //   scale: '1',
+    // });
+
   }
 }
 

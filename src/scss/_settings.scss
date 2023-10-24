@@ -30,7 +30,7 @@ html {
 
 .page {
   height: 100%;
-  font-family: var(--font-family);
+
   -webkit-text-size-adjust: 100%;
 }
 
@@ -38,10 +38,12 @@ html {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 160%;
   font-weight: 300;
   color: var(--black);
+  background: var(--white);
 }
 
 img,
@@ -79,7 +81,34 @@ input {
 }
 
 .site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  overflow: hidden;
+
+  &.exit-page-opacity {
+    transform-origin: center center;
+    animation-name: exitPageOpacity;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+    @keyframes exitPageOpacity {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .anim-scale-image {
+      transform: scale(1.1);
+    }
+
+    .anim-scale-navbar {
+    }
+
+    .anim-scale-text {
+    }
+  }
 }
 
 .is-hidden {

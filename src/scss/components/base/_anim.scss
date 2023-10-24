@@ -15,3 +15,60 @@
 .parallaxBlock__text {
   transition: var(--transition-anim);
 }
+
+.anim-opacity-page {
+  transform-origin: center center;
+  animation-name: fadeInOpacityPage;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay, 0.5s);
+
+  @keyframes fadeInOpacityPage {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.anim-item-scale {
+  transform-origin: center center;
+  animation-name: fadeInHome;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: var(--delay, 0.5s);
+  transform: scale(1.1);
+
+  @keyframes fadeInHome {
+    0% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.anim-opacity-up-home {
+  opacity: 0;
+  transform: translateY(100%);
+  animation-name: fadeInHeaderHome;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay, 0.5s);
+
+  @keyframes fadeInHeaderHome {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}

@@ -48,8 +48,11 @@ export const scrollYJs = () => {
 
 export const cookieClose = () => {
   const cookie = $('.data-cookie');
+  const windowC = $(window)
   if (sessionStorage.getItem('cookie') !== 'cookie-id') {
-    cookie.fadeIn('slow');
+     windowC.on('scroll', function(e) {
+        cookie.fadeIn('slow');
+     })
   }
   $('.btn-close-cookieHome').on('click', function() {
       $(this).closest('.cookieHome').fadeOut();
@@ -67,3 +70,31 @@ export const isInViewport = function(element) {
   );
 };
 
+
+
+export const delay = (timeout) => {
+  return new Promise(function(r) {
+    setTimeout(r, timeout)
+  })
+}
+
+
+export const linksRelocation = (cls) => {
+  const links = $('a');
+  const container = $('.site-container');
+
+  links.on('click', function (e) {
+    if ($(this).attr('target') === '_blank') return;
+    if ($(this).attr('target') === 'download') return;
+    let href = $(this).attr('href');
+    if (href.includes('#')) return;
+    if (href.includes('mailto:')) return ;
+    if (href.includes('tel:')) return ;
+    container.addClass(cls);
+    setTimeout(function () {
+      return location.href = href;
+    }, 500);
+
+    return false;
+  })
+}

@@ -96,6 +96,102 @@
     }
   }
 
+  &.footer--primary {
+    &.animate {
+      .titleUnderLineC {
+        h6 {
+          animation-name: opacityInFooter;
+        }
+        span {
+          animation-name: rowScale;
+        }
+      }
+
+      .anim-opacity-footer {
+        animation-name: opacityInFooter;
+      }
+    }
+
+    .anim-opacity-footer {
+      opacity: 0;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: var(--delay, 0.2s);
+
+      @keyframes opacityInFooter {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+    .titleUnderLineC {
+      h6 {
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-delay: var(--delay, 0.2s);
+      }
+      span {
+        opacity: 0;
+        width: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-delay: var(--delay, 0.2s);
+
+        @keyframes rowScale {
+          0% {
+            opacity: 0;
+            width: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &.footer--secondary {
+    &.animate {
+      .footer__row {
+        animation-name: fadeInFooterSecondary;
+      }
+    }
+
+    .container {
+      overflow: hidden;
+    }
+
+    .footer__row {
+      opacity: 0;
+      transform: translateY(100%);
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: var(--delay, 0.5s);
+
+      @keyframes fadeInFooterSecondary {
+        0% {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+    }
+  }
+
+  &.footer--primary {
+  }
+
   .titleUnderLineC {
     h6 {
       margin-bottom: 0.2rem;
