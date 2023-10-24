@@ -5,8 +5,6 @@ import { delay } from '../utils/mini'
 
 export default function preloaderJs() {
   preloaderHome()
-
-
 }
 
 // delay(1)

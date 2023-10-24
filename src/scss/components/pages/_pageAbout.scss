@@ -54,6 +54,7 @@
       position: absolute;
       left: 4rem;
       bottom: 8rem;
+      z-index: var(--z-text-home);
 
       @include tablet {
         left: 2rem;

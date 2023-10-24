@@ -102,6 +102,151 @@
   }
 }
 
+.data-block-video {
+  position: relative;
+  cursor: pointer;
+  .video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-play);
+    border-radius: 100%;
+    border: 1px solid var(--white);
+    background: transparent;
+    transition: all 0.2s ease;
+    width: 15rem;
+    height: 15rem;
+
+    @include mobile {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    svg {
+      fill: var(--white);
+      min-width: 2.1rem;
+      max-width: 2.1rem;
+
+      @include mobile {
+        min-width: 1.1rem;
+        max-width: 1.1rem;
+      }
+    }
+  }
+  @include hover {
+    .video__play {
+      background: var(--white);
+
+      svg {
+        fill: var(--black);
+      }
+    }
+  }
+}
+
+.graph-modal--primary {
+  background: var(--black);
+
+  &::before {
+    display: none;
+  }
+
+  .graph-modal {
+    &__container {
+      padding: 0;
+      border-radius: 0;
+      width: 100%;
+      margin: 0;
+      background-color: var(--black);
+    }
+
+    &__content {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--relative {
+        position: relative;
+      }
+      video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+
+        @include tablet {
+          height: auto;
+        }
+      }
+    }
+
+    &__close {
+      z-index: var(--z-close-modal);
+      width: 4rem;
+      height: 4rem;
+      right: 4rem;
+      top: 4rem;
+      background-image: none;
+
+      @include tablet {
+        width: 3rem;
+        height: 3rem;
+        right: 2rem;
+        top: 2rem;
+      }
+
+      @include mobile {
+        top: 1.5rem;
+        right: 1.5rem;
+      }
+
+      @include hover {
+        .btn__close {
+          .close__line {
+            &:first-child {
+              transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            &:last-child {
+              transform: translate(-50%, -50%) rotate(0deg);
+            }
+          }
+        }
+      }
+
+      .btn__close {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .close__line {
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          background: var(--white);
+          top: 50%;
+          left: 50%;
+          transition: all 0.2s ease-out;
+
+          &:first-child {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+
+          &:last-child {
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
 .formContactC {
   display: flex;
   align-items: flex-start;

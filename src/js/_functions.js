@@ -30,9 +30,9 @@ console.log(mobileCheck())
 // import { enableScroll } from './functions/enable-scroll';
 
 // Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
-
+import GraphModal from 'graph-modal'
+const modal = new GraphModal();
+// modal.open('one');
 // Реализация табов
 // import GraphTabs from 'graph-tabs';
 // const tabs = new GraphTabs('tab');

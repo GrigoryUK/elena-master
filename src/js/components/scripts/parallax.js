@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { isDesktop } from '../../functions/check-viewport'
 import ScrollSmoother from "../../vendor/gsap/ScrollSmoother.min"
 import ScrollTrigger from "../../vendor/gsap/ScrollTrigger.min"
 import { gsap } from '../../vendor/gsap/gsap.min'
@@ -10,21 +11,38 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function parallaxJs() {
   // parallaxMain()
   // parallaxMainScroll()
+  // ClickRefresh();
 
-  // ScrollSmootherJs();
+  ScrollSmootherJs();
   parallaxMainScrollGsap();
   parallaxMainGsap();
 }
 
 export const ScrollSmootherJs = () => {
 
+  if (isDesktop()) {
    const scroll = ScrollSmoother.create({
-    wrapper: '.wrapper',
-    content: '.content'
+    wrapper: '.wrapper--home',
+    content: '.content--home'
   })
+  }
+}
 
+export const ScrollTriggerRefresh = (timer = 700) => {
 
+  if (isDesktop()) {
+    setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, timer)
+  }
+}
 
+export const ClickRefresh = () => {
+  const acButton = $('.ac-trigger');
+
+  acButton.on('click', function() {
+    ScrollTriggerRefresh(400)
+  })
 }
 
 
@@ -52,6 +70,29 @@ const parallaxMainScrollGsap = () => {
 
   const container = document.querySelector('.hero-bg');
 
+  function scrollBySections() {
+    const scrollIndicator = document.querySelector(".parallaxBlock__main");
+
+    gsap.to(window, {
+      scrollTo: {
+        y: '.hero',
+        offsetY: window.innerHeight * 0.5
+      },
+      duration: 1
+    });
+
+    gsap.to(scrollIndicator, {
+      autoAlpha: 0,
+      duration: 1
+    });
+  }
+
+  // ScrollTrigger.create({
+  //   start: "top 50%",
+  //   end: "bottom 50%",
+  //   onEnter: scrollBySections
+  // });
+
 
 
   if (container) {
@@ -69,33 +110,18 @@ const parallaxMainScrollGsap = () => {
       y: '70%'
     });
 
-
-
     gsap.to('.hero', {
       scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        // markers:true,
-        scrub: 2
+        trigger: '.parallaxBlock__main',
+        start: 'top 50%',
+        end: 'bottom 100%',
+        markers:true,
+        scrub: 3,
+        pin: true,
       },
-      height: '-5vh'
+      y: '-100%',
     });
 
-
-
-
-    // gsap.to('.parallaxBlock__img', {
-    //   scrollTrigger: {
-    //     trigger: '.parallaxBlock__main',
-    //     start: 'top 70%',
-    //     end: 'bottom top',
-    //     // markers:true,
-    //     scrub: true,
-    //   },
-    //   y: '50%',
-    //   scale: '1',
-    // });
 
   }
 }
