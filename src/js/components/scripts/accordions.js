@@ -7,7 +7,9 @@ export function accordionsJs() {
 	const icons = document.querySelectorAll('.ac-caret-icon');
 
   if (container) {
-		new Accordion('.accordion-container');
+		new Accordion('.accordion-container', {
+      showMultiple: true,
+    });
 		function toggleCaret(open, icon) {
 			for (let i = 0; i < open.length; i++) {
 				open[i].addEventListener("click", function () {

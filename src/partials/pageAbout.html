@@ -1,17 +1,16 @@
 <div class="pageAbout anim-opacity-page" style="--delay: 0.5s">
   <div class="container__primary">
     <div class="pageAbout__main">
-      <div class="pageAbout__main--container anim-parallax-trigger">
-        <img
-          class="pageAbout__main--img anim-parallax-item"
-          src="./img/image-1920-1.png"
-          alt=""
-        />
-        <img
-          class="pageAbout__main--img mobile anim-parallax-item"
-          src="./img/image-320-1.png"
-          alt=""
-        />
+      <div class="pageAbout__main--container">
+        <picture>
+          <source media="(max-width: 667px)" srcset="./img/image-320-1.png" />
+          <source media="(max-width: 1024px)" srcset="./img/image-1920-1.png" />
+          <img
+            class="image pageAbout__main--img thumbnail"
+            src="./img/image-1920-1.png"
+            alt=""
+          />
+        </picture>
       </div>
       <div class="pageAbout__main--fon"></div>
       <h1>Обо мне</h1>

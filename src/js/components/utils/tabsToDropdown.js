@@ -22,8 +22,6 @@ export default function tabsToDropdown() {
         currentItem.addClass('converted-tab');
         container.prepend(toggler);
 
-        console.log(value);
-
         // function to slide dropdown
         function tabConvert_toggle(){
           currentItem.parent().find('.converted-tab').slideToggle();
@@ -83,7 +81,7 @@ export default function tabsToDropdown() {
 
   (function tabsToDropdown() {
     $('.filter__nav-to-dropdown').tabConvert({
-      activeClass: "mixitup-control-active",
+      activeClass: "tabs__nav-btn--active",
       screenSize: 667,
     });
   })();

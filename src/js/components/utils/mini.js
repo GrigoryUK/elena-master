@@ -48,17 +48,25 @@ export const scrollYJs = () => {
 }
 
 export const cookieClose = () => {
-  const cookie = $('.data-cookie');
-  const windowC = $(window)
-  if (sessionStorage.getItem('cookie') !== 'cookie-id') {
-     windowC.on('scroll', function(e) {
-        cookie.fadeIn('slow');
-     })
+  const container = document.querySelector('.data-cookie');
+
+  if (container) {
+    const cookie = $('.data-cookie');
+    const windowC = $(window)
+    const closeBtn = $('.btn-close-cookieHome')
+
+
+    closeBtn.on('click', function() {
+        $(this).closest('.cookieHome').fadeOut();
+        sessionStorage.setItem('cookie', 'cookie-id')
+    })
+    windowC.on('scroll', function(e) {
+    if (sessionStorage.getItem('cookie') !== 'cookie-id') {
+         cookie.fadeIn('slow');
+    }
+    })
   }
-  $('.btn-close-cookieHome').on('click', function() {
-      $(this).closest('.cookieHome').fadeOut();
-      sessionStorage.setItem('cookie', 'cookie-id')
-  })
+
 }
 
 export const isInViewport = function(element) {

@@ -3,18 +3,49 @@ import scrollLock from 'scroll-lock'
 
 
 export const MenuFunction = () => {
+  const burger = $('.data-burger');
+  const logo = $('.header__logo');
+  const header = $('.header');
+  const menu = $('.data-menu');
+  burger.on('click', function() {
 
-  $('.data-burger').on('click', function() {
-    $('.data-menu').fadeIn()
-    scrollLock.disablePageScroll();
-  })
-  $('.data-burger-close').on('click', function() {
-    $('.data-menu').fadeOut()
-    scrollLock.enablePageScroll();
-  })
 
-  $('.data-menu').find('a').on('click', function() {
-    $('.data-menu').fadeOut()
+    $(this).toggleClass('open');
+
+
+    if ($(this).hasClass('open')) {
+      menu.fadeIn();
+      scrollLock.disablePageScroll();
+      logo.addClass('active')
+
+      setTimeout(() => {
+        $(this).addClass('anim')
+      }, 200)
+    } else {
+      menu.fadeOut()
+      scrollLock.enablePageScroll();
+      logo.removeClass('active')
+
+      setTimeout(() => {
+        $(this).removeClass('anim')
+      }, 0)
+    }
+
+    // $(this).toggleClass('active', function () {
+    //   if ($(this).hasClass('active')) {
+
+    //     //
+    //
+    //   } else {
+
+    //     logo.css({background: 'red'});
+
+    //   }
+    // });
+  });
+
+  menu.find('a').on('click', function() {
+    menu.fadeOut()
     scrollLock.enablePageScroll();
   })
 }

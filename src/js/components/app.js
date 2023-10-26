@@ -6,8 +6,9 @@ import { MenuFunction } from './scripts/menu'
 import { modalJs } from './scripts/modal'
 import parallaxJs from './scripts/parallax'
 import preloaderJs from './scripts/preloader'
+import showMoreJs from './scripts/showMore'
 import slidersJs from './scripts/sliders'
-import { cookieClose, getMinHeight, linksRelocation, scrollYJs, smoothScroll } from './utils/mini'
+import { cookieClose, getMinHeight, linksRelocation, smoothScroll } from './utils/mini'
 import tabsToDropdown from './utils/tabsToDropdown'
 
 getMinHeight();
@@ -23,10 +24,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   slidersJs()
   cookieClose()
   linksHoverJs()
-  scrollYJs()
   linksRelocation('exit-page-opacity');
   animationJs()
   modalJs()
+  showMoreJs();
 });
 
 

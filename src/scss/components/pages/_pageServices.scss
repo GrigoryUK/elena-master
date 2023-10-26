@@ -30,7 +30,7 @@
       font-family: var(--font-family);
       font-size: 1.8rem;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 160%;
       text-transform: uppercase;
 
@@ -109,11 +109,16 @@
     padding-bottom: 11rem;
 
     @include tablet {
+      display: flex;
+      align-items: flex-start;
       flex-direction: column-reverse;
       gap: 4rem;
     }
 
     @include mobile {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column-reverse;
       margin-top: 1rem;
       gap: 2rem;
       padding-bottom: 5rem;

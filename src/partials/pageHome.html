@@ -6,8 +6,8 @@
 </div>
 <div class="pageHome">
   <div class="container__primary">
-    <div class="pageHome__slider--container anim-parallax-trigger">
-      <div class="pageHome__slider--trigger anim-parallax-item">
+    <div class="pageHome__slider--container">
+      <div class="pageHome__slider--trigger">
         <div class="pageHome__slider--fon"></div>
         <div
           class="swiper pageHome__slider anim-item-scale"
@@ -24,7 +24,11 @@
                   media="(max-width: 1024px)"
                   srcset="./img/slider-home-1-t.png"
                 />
-                <img class="image" src="./img/slider-home-1-d.png" alt="" />
+                <img
+                  class="image thumbnail"
+                  src="./img/slider-home-1-d.png"
+                  alt=""
+                />
               </picture>
             </div>
             <div class="swiper-slide">
@@ -37,7 +41,11 @@
                   media="(max-width: 1024px)"
                   srcset="./img/image-1920-1.png"
                 />
-                <img class="image" src="./img/image-1920-1.png" alt="" />
+                <img
+                  class="image thumbnail"
+                  src="./img/image-1920-1.png"
+                  alt=""
+                />
               </picture>
             </div>
           </div>
@@ -66,7 +74,6 @@
         </div>
       </div>
     </div>
-
     <div class="content content-min-h-js pb-150-primary">
       <div class="aboutBlock__container container">
         <div class="aboutBlock">
@@ -102,14 +109,16 @@
         <div class="hero">
           <div class="hero--new"></div>
           <div class="parallaxBlock__fon"></div>
-          <div
-            class="hero-bg"
-            style="background-image: url('./img/image-1920-2.png')"
-          ></div>
-          <div
-            class="hero-bg-mobile"
-            style="background-image: url('./img/image-320-2.png')"
-          ></div>
+          <picture>
+            <source media="(max-width: 667px)" srcset="./img/image-320-2.png" />
+            <img
+              src="./img/image-1920-2.png"
+              class="image parallaxBlock__img thumbnail"
+              width=""
+              height=""
+              alt=""
+            />
+          </picture>
           <div class="parallaxBlock__text">
             <p>
               Я хочу, чтобы как можно больше людей стали счастливее, уверенней в

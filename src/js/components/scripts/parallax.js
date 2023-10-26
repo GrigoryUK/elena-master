@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import simpleParallax from 'simple-parallax-js'
 import { isDesktop, isMobile, isTablet } from '../../functions/check-viewport'
 import ScrollSmoother from "../../vendor/gsap/ScrollSmoother.min"
 import ScrollTrigger from "../../vendor/gsap/ScrollTrigger.min"
@@ -9,13 +10,17 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
 export default function parallaxJs() {
-  // parallaxMain()
-  // parallaxMainScroll()
-  // ClickRefresh();
+  simpleParallaxJs();
+}
 
-  ScrollSmootherJs();
-  parallaxMainScrollGsap();
-  parallaxMainGsap();
+export const simpleParallaxJs = () => {
+  const images = document.querySelectorAll(".thumbnail");
+  new simpleParallax(images, {
+    delay: 0.75,
+    transition: "cubic-bezier(0.075, 0.5, 0, 1)",
+    orientation: 'down',
+    scale: 1.5,
+  });
 }
 
 export const ScrollSmootherJs = () => {
@@ -87,11 +92,7 @@ const parallaxMainScrollGsap = () => {
     });
   }
 
-  // ScrollTrigger.create({
-  //   start: "top 50%",
-  //   end: "bottom 50%",
-  //   onEnter: scrollBySections
-  // });
+
 
 
 

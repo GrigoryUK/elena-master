@@ -24,6 +24,9 @@
   &__close {
     display: flex;
     justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+
     .burger-close {
       position: relative;
       width: 4rem;
@@ -68,7 +71,7 @@
           font-family: var(--font-family);
           font-size: 3.2rem;
           font-style: normal;
-          font-weight: 500;
+          font-weight: 400;
           line-height: 160%;
           text-transform: uppercase;
           display: flex;
@@ -105,7 +108,7 @@
           display: inline-block;
           color: currentColor;
           content: "/";
-          font-weight: 500;
+          font-weight: 400;
           padding: 0 0.7rem;
         }
       }
@@ -115,7 +118,7 @@
         text-align: right;
         font-family: var(--font-family);
         font-size: 1.6rem;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.6;
         text-transform: uppercase;
         display: flex;

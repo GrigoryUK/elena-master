@@ -381,7 +381,7 @@
           display: inline-block;
           color: currentColor;
           content: "/";
-          font-weight: 500;
+          font-weight: 400;
           padding: 0 3rem;
 
           @include tablet {
@@ -394,7 +394,7 @@
         position: relative;
         display: flex;
         color: var(--black);
-        font-weight: 500;
+        font-weight: 400;
         text-transform: uppercase;
         &::after {
           content: "";
