@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import { isDesktop } from '../../functions/check-viewport'
+import { isDesktop, isMobile, isTablet } from '../../functions/check-viewport'
 import ScrollSmoother from "../../vendor/gsap/ScrollSmoother.min"
 import ScrollTrigger from "../../vendor/gsap/ScrollTrigger.min"
 import { gsap } from '../../vendor/gsap/gsap.min'
@@ -97,30 +97,61 @@ const parallaxMainScrollGsap = () => {
 
   if (container) {
 
+    if (isDesktop() || isTablet()) {
+      gsap.to('.hero-bg', {
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top 100%',
+          end: 'bottom 100%',
+          // markers:true,
+          scrub: 1,
+        },
+        top: '0%',
+        scale: '1.05',
+      });
 
-    gsap.to('.hero-bg', {
-      scrollTrigger: {
-        trigger: '.parallaxBlock__main',
-        start: 'top 70%',
-        end: 'bottom 100%',
-        // markers:true,
-        scrub: 2
-      },
-      scale: '1.05',
-      y: '70%'
-    });
+      gsap.to('.hero-bg', {
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          // markers:true,
+          scrub: 1,
+        },
+        backgroundPosition: `50% -100%`,
+      });
+    }
 
-    gsap.to('.hero', {
-      scrollTrigger: {
-        trigger: '.parallaxBlock__main',
-        start: 'top 50%',
-        end: 'bottom 100%',
-        markers:true,
-        scrub: 3,
-        pin: true,
-      },
-      y: '-100%',
-    });
+    if (isMobile()) {
+
+      gsap.to('.hero-bg-mobile', {
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top 100%',
+          end: 'bottom 100%',
+          // markers:true,
+          scrub: 1,
+        },
+        top: '0%',
+        scale: '1',
+      });
+    }
+
+
+
+
+
+    // gsap.to('.hero', {
+    //   scrollTrigger: {
+    //     trigger: '.parallaxBlock__main',
+    //     start: 'top 50%',
+    //     end: 'bottom 100%',
+    //     markers:true,
+    //     scrub: 3,
+    //     pin: true,
+    //   },
+    //   y: '-100%',
+    // });
 
 
   }

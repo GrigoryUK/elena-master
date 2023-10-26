@@ -2,6 +2,7 @@
 import Inputmask from "inputmask"
 import $ from 'jquery'
 import SmoothScroll from 'smooth-scroll'
+import { isMobile, isTablet } from '../../functions/check-viewport'
 
 export const maskPhone = () => {
   let tel = document.querySelectorAll('input[type="tel"]');
@@ -92,6 +93,11 @@ export const linksRelocation = (cls) => {
     if (href.includes('tel:')) return ;
     container.addClass(cls);
     setTimeout(function () {
+      if (isMobile() || isTablet()) {
+        setTimeout(() => {
+          container.removeClass('exit-page-opacity')
+        }, 600)
+      }
       return location.href = href;
     }, 500);
 

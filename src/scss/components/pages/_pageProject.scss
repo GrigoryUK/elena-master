@@ -51,8 +51,10 @@
       }
 
       @include mobile {
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 1.5rem;
+        row-gap: 1.5rem;
       }
     }
   }

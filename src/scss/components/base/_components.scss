@@ -129,8 +129,8 @@
 
     svg {
       fill: var(--white);
-      min-width: 2.1rem;
-      max-width: 2.1rem;
+      min-width: 20px;
+      max-width: 20px;
 
       @include mobile {
         min-width: 1.1rem;

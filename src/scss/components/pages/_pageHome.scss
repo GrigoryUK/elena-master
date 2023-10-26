@@ -11,7 +11,7 @@
       margin-bottom: 15rem;
 
       @include tablet {
-        margin-bottom: 0.2rem;
+        margin-bottom: 2px;
       }
     }
 
@@ -64,7 +64,7 @@
       @include mobile {
         width: 17.1rem;
         right: 1.5rem;
-        bottom: 8rem;
+        bottom: 10rem;
       }
     }
 
@@ -81,6 +81,24 @@
     justify-content: space-between;
     margin-bottom: 12.5rem;
 
+    @keyframes fadeInOpacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes AnimWidth {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
     @include tablet {
       margin-bottom: 6rem;
       flex-direction: column;
@@ -96,11 +114,34 @@
       @include tablet {
         padding: 0;
       }
+
+      &.animate {
+        .aboutBlock__img {
+          animation-name: fadeInOpacity;
+        }
+
+        .aboutBlock__text {
+          animation-name: fadeInOpacity;
+        }
+
+        .aboutBlock__links {
+          a {
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
     }
 
     &__img {
       max-width: 70rem;
       width: 100%;
+      transform-origin: center center;
+      opacity: 0;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: var(--delay, 0.1s);
 
       @include tablet {
         max-width: 100%;
@@ -110,6 +151,10 @@
     &__text {
       max-width: 87rem;
       width: 100%;
+      opacity: 0;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-delay: var(--delay, 0.1s);
 
       @include tablet {
         padding: 0 2rem;
@@ -152,6 +197,10 @@
         align-items: center;
         gap: 0.6rem;
 
+        &::after {
+          transform: scaleX(0);
+        }
+
         @include mobile {
           font-size: 1.4rem;
         }
@@ -172,14 +221,14 @@
   .parallax__trigger {
     width: 100%;
     height: 1px;
-    margin-bottom: 12.5rem;
+    padding-bottom: 12.5rem;
 
     @include tablet {
-      margin-bottom: 6rem;
+      padding-bottom: 6rem;
     }
 
     @include mobile {
-      margin-bottom: 4rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -189,19 +238,49 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     width: 100vw;
+  }
+
+  .hero--new {
+    position: absolute;
+    bottom: -100vh;
+    height: 100vh;
+    width: 100%;
+    background: var(--white);
+    z-index: var(--z-height-block-parallax);
   }
 
   .hero-bg {
     position: absolute;
-    top: -70%;
+    top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
     transform: scale(1.3);
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .hero-bg-mobile {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      position: absolute;
+      top: -30%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.3);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   .parallaxBlock {

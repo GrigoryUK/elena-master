@@ -12,5 +12,10 @@ export const MenuFunction = () => {
     $('.data-menu').fadeOut()
     scrollLock.enablePageScroll();
   })
+
+  $('.data-menu').find('a').on('click', function() {
+    $('.data-menu').fadeOut()
+    scrollLock.enablePageScroll();
+  })
 }
 
