@@ -72,3 +72,17 @@
     }
   }
 }
+
+.amin-trigger-main {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  top: 10vh;
+  left: 0;
+}
+
+.amin-trigger-anim {
+  position: relative;
+  z-index: var(--z-trigger-anim);
+}

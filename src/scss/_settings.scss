@@ -44,6 +44,10 @@ html {
   font-weight: 300;
   color: var(--black);
   background: var(--white);
+
+  @include tablet {
+    scroll-behavior: smooth;
+  }
 }
 
 img,

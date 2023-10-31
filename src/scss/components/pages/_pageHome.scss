@@ -1,18 +1,37 @@
 .pageHome {
+  @include tablet {
+    --transition-anim: all 0s;
+  }
   .pageHome__slider {
-    position: relative;
-    transition: all 0.5s;
+    position: absolute;
+    transition: var(--transition-anim);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+    overflow: clip;
+
+    .swiper-slide {
+      img {
+        transition: var(--transition-anim);
+      }
+    }
 
     &--container {
       position: relative;
       height: 100vh;
       width: 100vw;
       overflow: hidden;
+      overflow: clip;
     }
 
     &--trigger {
       height: 100%;
       width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     &--fon {
@@ -237,10 +256,23 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    overflow: clip;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 100vw;
+
+    // @include tablet {
+    //   height: 76.8rem;
+    // }
+
+    // @include small-tablet {
+    //   height: 102.4rem;
+    // }
+
+    // @include mobile {
+    //   height: 39rem;
+    // }
   }
 
   .hero--new {
@@ -249,12 +281,27 @@
     height: 100vh;
     width: 100%;
     background: var(--white);
-    z-index: var(--z-height-block-parallax);
+    z-index: -1;
+
+    // @include tablet {
+    //   height: 76.8rem;
+    //   bottom: -76.8rem;
+    // }
+
+    // @include small-tablet {
+    //   height: 102.4rem;
+    //   bottom: -102.4rem;
+    // }
+
+    // @include mobile {
+    //   height: 39rem;
+    //   bottom: -39rem;
+    // }
   }
 
   .hero-bg {
     position: absolute;
-    // top: -100%;
+    top: 100%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -289,7 +336,20 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    overflow: clip;
     margin-bottom: 12.5rem;
+
+    // @include tablet {
+    //   height: 76.8rem;
+    // }
+
+    // @include small-tablet {
+    //   height: 102.4rem;
+    // }
+
+    // @include mobile {
+    //   height: 39rem;
+    // }
 
     @include tablet {
       margin-bottom: 6rem;
@@ -297,7 +357,6 @@
 
     @include mobile {
       margin-bottom: 4rem;
-      height: 70vh;
     }
 
     &__fon {
@@ -310,14 +369,31 @@
       z-index: var(--z-fon-home);
       opacity: 0.2;
       pointer-events: none;
+
+      // @include tablet {
+      //   height: 76.8rem;
+      // }
+
+      // @include small-tablet {
+      //   height: 102.4rem;
+      // }
+
+      // @include mobile {
+      //   height: 39rem;
+      // }
     }
 
     &__img {
       position: absolute;
       width: 100%;
       height: 100%;
-      top: 0;
+      top: -100%;
       left: 0;
+
+      @include tablet {
+        top: 0%;
+        height: 100%;
+      }
     }
 
     &__text {
@@ -351,6 +427,19 @@
       height: 100vh;
       width: 100%;
       overflow: hidden;
+      overflow: clip;
+
+      // @include tablet {
+      //   height: 76.8rem;
+      // }
+
+      // @include small-tablet {
+      //   height: 102.4rem;
+      // }
+
+      // @include mobile {
+      //   height: 39rem;
+      // }
     }
   }
 
@@ -405,6 +494,7 @@
         align-items: flex-start;
         gap: 2rem;
         overflow: hidden;
+        overflow: clip;
 
         .linkC {
           display: flex;

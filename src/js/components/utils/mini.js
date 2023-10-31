@@ -16,7 +16,7 @@ export const smoothScroll = () => {
 
   const scroll = new SmoothScroll('a[href*="#top"]', {
     updateURL: false,
-    speed: 700,
+    speed: 800,
     // speedAsDuration: true,
   });
 }
@@ -26,10 +26,18 @@ export const smoothScroll = () => {
 
 export const getMinHeight = () => {
   const getHeight = () => {
-    const headerHeight = document?.querySelector('.header').offsetHeight;
-    const headerFooter = document?.querySelector('.footer').offsetHeight;
+    const header = document?.querySelector('.header');
+    const footer = document?.querySelector('.footer');
 
-    document.querySelector(':root').style.setProperty('--min-height', `calc(100vh - ${headerHeight}px - ${headerFooter}px)`);
+    if (header || footer) {
+      const headerHeight = header.offsetHeight;
+      const headerFooter = footer.offsetHeight;
+
+      document.querySelector(':root').style.setProperty('--min-height', `calc(100vh - ${headerHeight}px - ${headerFooter}px)`);
+    }
+
+
+
 
 
   }

@@ -7,7 +7,14 @@
 <div class="pageHome">
   <div class="container__primary">
     <div class="pageHome__slider--container">
-      <div class="pageHome__slider--trigger">
+      <div class="amin-trigger-main"></div>
+      <div
+        class="pageHome__slider--trigger anim-parallax-item rellax"
+        data-rellax-desktop-speed="-8"
+        data-rellax-tablet-speed="-8"
+        data-rellax-mobile-speed="-8"
+        data-rellax-xs-speed="-8"
+      >
         <div class="pageHome__slider--fon"></div>
         <div
           class="swiper pageHome__slider anim-item-scale"
@@ -24,11 +31,7 @@
                   media="(max-width: 1024px)"
                   srcset="./img/slider-home-1-t.png"
                 />
-                <img
-                  class="image thumbnail"
-                  src="./img/slider-home-1-d.png"
-                  alt=""
-                />
+                <img class="image" src="./img/slider-home-1-d.png" alt="" />
               </picture>
             </div>
             <div class="swiper-slide">
@@ -41,11 +44,7 @@
                   media="(max-width: 1024px)"
                   srcset="./img/image-1920-1.png"
                 />
-                <img
-                  class="image thumbnail"
-                  src="./img/image-1920-1.png"
-                  alt=""
-                />
+                <img class="image" src="./img/image-1920-1.png" alt="" />
               </picture>
             </div>
           </div>
@@ -74,7 +73,7 @@
         </div>
       </div>
     </div>
-    <div class="content content-min-h-js pb-150-primary">
+    <div class="content content-min-h-js pb-150-primary amin-trigger-anim">
       <div class="aboutBlock__container container">
         <div class="aboutBlock">
           <div class="aboutBlock__img">
@@ -107,16 +106,17 @@
       <div class="parallaxBlock__main">
         <div class="parallax__trigger parallax__trigger--start"></div>
         <div class="hero">
-          <div class="hero--new"></div>
           <div class="parallaxBlock__fon"></div>
+          <div class="hero--new"></div>
           <picture>
             <source media="(max-width: 667px)" srcset="./img/image-320-2.png" />
             <img
               src="./img/image-1920-2.png"
-              class="image parallaxBlock__img thumbnail"
-              width=""
-              height=""
-              alt=""
+              class="image parallaxBlock__img thumbnail rellax"
+              data-rellax-desktop-speed="-7.6"
+              data-rellax-tablet-speed="-4.5"
+              data-rellax-mobile-speed="-8"
+              data-rellax-xs-speed="-5"
             />
           </picture>
           <div class="parallaxBlock__text">
