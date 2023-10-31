@@ -93,7 +93,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 12.5rem;
+    // margin-bottom: 12.5rem;
     position: relative;
     padding-top: 15rem;
 
@@ -120,13 +120,13 @@
     }
 
     @include tablet {
-      margin-bottom: 6rem;
+      // margin-bottom: 6rem;
       flex-direction: column;
       gap: 4rem;
     }
 
     @include mobile {
-      margin-bottom: 4rem;
+      // margin-bottom: 4rem;
       gap: 3rem;
     }
 
@@ -242,13 +242,16 @@
     width: 100%;
     height: 1px;
     padding-bottom: 12.5rem;
+    padding-bottom: 25rem;
 
     @include tablet {
       padding-bottom: 6rem;
+      padding-bottom: 12.8rem;
     }
 
     @include mobile {
       padding-bottom: 4rem;
+      padding-bottom: 8rem;
     }
   }
 
@@ -262,17 +265,17 @@
     justify-content: flex-end;
     width: 100vw;
 
-    // @include tablet {
-    //   height: 76.8rem;
-    // }
+    @include tablet {
+      height: 76.8rem;
+    }
 
-    // @include small-tablet {
-    //   height: 102.4rem;
-    // }
+    @include small-tablet {
+      height: 102.4rem;
+    }
 
-    // @include mobile {
-    //   height: 39rem;
-    // }
+    @include mobile {
+      height: 39rem;
+    }
   }
 
   .hero--new {
@@ -283,20 +286,20 @@
     background: var(--white);
     z-index: -1;
 
-    // @include tablet {
-    //   height: 76.8rem;
-    //   bottom: -76.8rem;
-    // }
+    @include tablet {
+      height: 76.8rem;
+      bottom: -76.8rem;
+    }
 
-    // @include small-tablet {
-    //   height: 102.4rem;
-    //   bottom: -102.4rem;
-    // }
+    @include small-tablet {
+      height: 102.4rem;
+      bottom: -102.4rem;
+    }
 
-    // @include mobile {
-    //   height: 39rem;
-    //   bottom: -39rem;
-    // }
+    @include mobile {
+      height: 39rem;
+      bottom: -39rem;
+    }
   }
 
   .hero-bg {
@@ -339,17 +342,17 @@
     overflow: clip;
     margin-bottom: 12.5rem;
 
-    // @include tablet {
-    //   height: 76.8rem;
-    // }
+    @include tablet {
+      height: 76.8rem;
+    }
 
-    // @include small-tablet {
-    //   height: 102.4rem;
-    // }
+    @include small-tablet {
+      height: 102.4rem;
+    }
 
-    // @include mobile {
-    //   height: 39rem;
-    // }
+    @include mobile {
+      height: 39rem;
+    }
 
     @include tablet {
       margin-bottom: 6rem;
@@ -370,17 +373,17 @@
       opacity: 0.2;
       pointer-events: none;
 
-      // @include tablet {
-      //   height: 76.8rem;
-      // }
+      @include tablet {
+        height: 76.8rem;
+      }
 
-      // @include small-tablet {
-      //   height: 102.4rem;
-      // }
+      @include small-tablet {
+        height: 102.4rem;
+      }
 
-      // @include mobile {
-      //   height: 39rem;
-      // }
+      @include mobile {
+        height: 39rem;
+      }
     }
 
     &__img {
@@ -392,7 +395,12 @@
 
       @include tablet {
         top: 0%;
+        // top: -100%;
         height: 100%;
+      }
+
+      @include mobile {
+        // height: 110%;
       }
     }
 
@@ -429,17 +437,17 @@
       overflow: hidden;
       overflow: clip;
 
-      // @include tablet {
-      //   height: 76.8rem;
-      // }
+      @include tablet {
+        height: 76.8rem;
+      }
 
-      // @include small-tablet {
-      //   height: 102.4rem;
-      // }
+      @include small-tablet {
+        height: 102.4rem;
+      }
 
-      // @include mobile {
-      //   height: 39rem;
-      // }
+      @include mobile {
+        height: 39rem;
+      }
     }
   }
 

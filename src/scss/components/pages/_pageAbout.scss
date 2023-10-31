@@ -1,4 +1,7 @@
 .pageAbout {
+  @include tablet {
+    --transition-anim: all 0s;
+  }
   .container {
     @include tablet {
       padding: 0;
@@ -98,11 +101,12 @@
 
     video,
     img {
-      position: relative;
+      position: absolute;
       width: 100vw;
       height: 100vh;
       top: 0;
       left: 0;
+      transition: var(--transition-anim);
     }
 
     h1 {

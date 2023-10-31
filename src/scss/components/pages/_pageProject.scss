@@ -1,4 +1,7 @@
 .pageProject {
+  @include tablet {
+    --transition-anim: all 0s;
+  }
   .text {
     margin: 0 auto;
     max-width: 132rem;

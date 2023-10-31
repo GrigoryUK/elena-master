@@ -21,24 +21,29 @@ export default function parallaxJs() {
 }
 
 export const rellaxJs =() => {
-   if (isDesktop()) {
-    const rellax = new Rellax('.rellax', {
-    // center: true,
-    breakpoints:[768, 1024, 1201],
-      });
-   }
+  const container = document.querySelector('.rellax');
 
-
+  if (container) {
+    if (isDesktop()) {
+      const rellax = new Rellax('.rellax', {
+      // center: true,
+      breakpoints:[768, 1024, 1201],
+        });
+     }
+  }
 }
 
 
 export const ScrollSmootherJs = () => {
+  const container = document.querySelector('.wrapper--anim');
 
-  if (isDesktop()) {
-    const scroll = ScrollSmoother.create({
-      wrapper: '.wrapper--anim',
-      content: '.content--anim'
-    })
+  if (container) {
+    if (isDesktop()) {
+      const scroll = ScrollSmoother.create({
+        wrapper: '.wrapper--anim',
+        content: '.content--anim'
+      })
+    }
   }
 }
 
