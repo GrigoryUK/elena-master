@@ -6,6 +6,12 @@
   }
 }
 
+@mixin for-mac {
+  @media (min-width: (1921px)) {
+    @content;
+  }
+}
+
 @mixin big-desktop {
   @media (max-width: (1440px)) {
     @content;

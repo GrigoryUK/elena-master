@@ -26,11 +26,27 @@ export const rellaxJs =() => {
   if (container) {
     if (isDesktop()) {
       const rellax = new Rellax('.rellax', {
-      // center: true,
+      center: true,
       breakpoints:[768, 1024, 1201],
         });
      }
   }
+}
+
+export const simpleParallaxJs = () => {
+  const images = document.querySelectorAll(".rellax");
+
+  if (images) {
+    if (isTablet() || isMobile()) {
+      new simpleParallax(images, {
+        delay: 0.75,
+        transition: "cubic-bezier(0.075, 0.5, 0, 1)",
+        orientation: 'down',
+        scale: 1.5,
+      });
+    }
+  }
+
 }
 
 
@@ -185,15 +201,7 @@ const parallaxMainScrollGsap = () => {
 
 
 
-export const simpleParallaxJs = () => {
-  const images = document.querySelectorAll(".thumbnail");
-  new simpleParallax(images, {
-    delay: 0.75,
-    transition: "cubic-bezier(0.075, 0.5, 0, 1)",
-    orientation: 'down',
-    scale: 1.5,
-  });
-}
+
 
 
 
