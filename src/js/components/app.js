@@ -13,6 +13,13 @@ import tabsToDropdown from './utils/tabsToDropdown'
 
 getMinHeight();
 
+// window.addEventListener('resize', el => {
+//   setTimeout(() => {
+//     rellaxJs()
+//   console.log(100);
+//   }, 1000)
+// });
+
 document.addEventListener('DOMContentLoaded', (event) => {
   preloaderJs();
   accordionsJs()
@@ -29,5 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   modalJs()
   showMoreJs();
 });
+
+
 
 

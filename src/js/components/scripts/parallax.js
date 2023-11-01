@@ -15,7 +15,7 @@ export default function parallaxJs() {
   // parallaxMainGsap()
   // parallaxMainScrollGsap();
   // scrollJs()
-  rellaxJs()
+  rellaxJs();
   ScrollSmootherJs();
   // prTablet();
 }
@@ -25,10 +25,18 @@ export const rellaxJs =() => {
 
   if (container) {
     if (isDesktop()) {
+
       const rellax = new Rellax('.rellax', {
-      center: true,
-      breakpoints:[768, 1024, 1201],
-        });
+        center: true,
+      });
+
+      window.addEventListener('resize', el => {
+        rellax.destroy()
+        console.log(rellax.refresh());
+      });
+
+
+
      }
   }
 }

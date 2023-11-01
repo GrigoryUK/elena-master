@@ -382,8 +382,8 @@
 
     &__fon {
       position: absolute;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
       top: 0;
       left: 0;
       background: var(--black);
@@ -414,9 +414,21 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      top: -100%;
-      top: -0%;
       left: 0;
+      top: 0;
+
+      // &::before {
+      //   @include pseudo;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: var(--black);
+      //   z-index: var(--z-fon-home);
+      //   opacity: 0.6;
+      //   pointer-events: none;
+      //   position: absolute;
+      //   left: 0;
+      //   top: 0;
+      // }
 
       @include for-mac {
         top: 0;
@@ -728,4 +740,24 @@
       }
     }
   }
+}
+
+.solid-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+.parallax-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-attachment: fixed;
+  background-size: cover;
 }
